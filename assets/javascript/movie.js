@@ -1,15 +1,18 @@
-var randomDate = "02/23/1999";
-var randomFormat = "MM/DD/YYYY";
-var convertedDate = moment(randomDate, randomFormat);
-
-displayMovies(convertedDate);
-
 function displayMovies(date) {
 
-	//call TMDb API using ajax and display repsonses 
+	// call TMDb API using ajax and display repsonses 
+	// sample request searching by release date
+	// https://api.themoviedb.org/3/discover/movie?api_key=c8aa2c9356ba04f47abb6bbc2d1a4077&&language=en-US&region=US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&primary_release_date.gte=1980-12-04&primary_release_date.lte=1980-12-14
 
-	var primary_release_date_gte = '2017-11-15';
-	var primary_release_date_lte = '2017-12-05';
+	// expecting date in certain format (YYYY-MM-DD)
+
+	var beginningDateFormat = "MM/DD/YYYY";
+	var endingDateFormat = "YYYY-MM-DD";
+
+	// returns up to 10 movies sorted by popularity around the timeframe you selected
+
+	var primary_release_date_gte = moment(date, beginningDateFormat).subtract(14, 'days').format(endingDateFormat);
+	var primary_release_date_lte = moment(date, beginningDateFormat).add(7, 'days').format(endingDateFormat);
 
 	var queryurl = 'https://api.themoviedb.org/3/discover/movie';
 	  	queryurl += '?' + $.param({
@@ -20,8 +23,8 @@ function displayMovies(date) {
 	    'include_adult': 'false',
 	    'include_video': 'false',
 	    'page': '1',
-	    'primary_release_date.gte': '2017-11-15',
-	    'primary_release_date.lte': '2017-12-05'
+	    'primary_release_date.gte': primary_release_date_gte,
+	    'primary_release_date.lte': primary_release_date_lte
 	});
 
 	$.ajax({
@@ -30,24 +33,39 @@ function displayMovies(date) {
 	}).done(function(response) {
 
 		var movies = response.results;
-
+		var posterCount = 0;
+		
 		$('#movies').empty();
 
-		for (var i = 0; i < 3 && i < movies.length; i++) {
+		var p = $('<p>').html('<small>Popular movies at the time</small>');
+		$('#movies').append(p);
 
-			var row = $('<div class="row">');
-			var col1 = $('<div class="col-sm-4">');
-			var p = $('<small>').text(movies[i].title);
-			var col2 = $('<div class="col-sm-8">');
-			var img = $('<img class="img-responsive">');
-			img.attr('src', 'https://image.tmdb.org/t/p/w92/' + movies[i].poster_path);
+		for (var i = 0; i < movies.length && i < 10; i++) {
 
-			col1.append(p);
-			col2.append(img);			
-			row.append(col1);
-			row.append(col2);
+			if (movies[i].poster_path) {
+				posterCount++;
+				var div = $('<div class="img-movie">');
+				var a = $('<a>');
+				a.attr('href', 'https://www.themoviedb.org/movie/' + movies[i].id);
+				a.attr('target', '_blank');
+				var img = $('<img class="img-responsive">');
+				img.attr('src', 'https://image.tmdb.org/t/p/w154/' + movies[i].poster_path);
+				img.attr('alt', movies[i].title);	
+				a.append(img);
+				div.append(a);
+				$('#movies').append(div);
 
-			$('#movies').append(row);
+				if (posterCount % 2 == 0) {
+					var clear = $('<div class=clearfix>');
+					$('#movies').append(clear);					
+				}
+			}
 		}
+
+		var img = $('<img class="img-responsive">');
+		img.attr('src', 'assets/images/tmdb.png');
+		img.attr('alt', 'TMDb attribution');
+		img.css('padding-top','10px');
+		$('#movies').append(img);
 	});
 }
