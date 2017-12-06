@@ -1,3 +1,6 @@
+$(document).ready(function () {
+
+
 //https://firebase.google.com/docs/auth/web/google-signin
 // firebase key for the project 
 
@@ -13,4 +16,8 @@
   };
   firebase.initializeApp(config);
 
+  $( function() {
+    $( "#calendar" ).datepicker();
+  } );
   
+  });
