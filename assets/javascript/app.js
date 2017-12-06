@@ -1,8 +1,7 @@
-<<<<<<< HEAD
+
 $(document).ready(function () {
-   $("#calendar").jqxCalendar({theme: "arctic", width:250, height:250});
 });
-=======
+
 //https://firebase.google.com/docs/auth/web/google-signin
 // firebase key for the project 
 
@@ -40,4 +39,7 @@ $(document).ready(function () {
 	}).fail(function(err) {
   	throw err;
 	});
->>>>>>> be2abcd560587b8313c8eaef9d2b3e29e25b06bb
+
+  $( function() {
+    $( "#calendar" ).datepicker();
+  } );
