@@ -14,7 +14,7 @@
 
   <!--jQuery UI Datepicker - Default functionality-->
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script
@@ -29,24 +29,80 @@
 
 <BODY>
 
-<p>Date: <input type="text" id="calendar"></p>
 
-<div class="col-sm-3">
-              <form id="journalEntryForTheDay" role="form">
+ 
+
+<div id="main-container" class="container">
+
+    <section class="main-section col-sm-9" id="main-section">
+    
+
+    <div class="row">
+    <div class="container col-sm-3" id="date">
+   
+    <p>Date: <input type="text" id="calendar"></p>
+    </div>
+
+<div class="container col-sm-6" id="Journal">
+
+      <h1>Journal Post</h1>
+                   <form id="journalEntryForTheDay" role="form">
                   <h3><u>Add a journal entry to save for this date.</u></h3>
                   <div class="form-group">
                       <label for="action-input">Type Your Post Below</label>
-                      <textarea name="Text1" cols="40" rows="5"></textarea>
+         <div class="col-sm-3">
+             <textarea name="Text1" cols="40" rows="5"></textarea>
                   </div>
                   <input id="userAddButton" type="submit" value="Save Your Post" class="btn btn-primary">
               </form>    
           </div>
+    </div>
+  
+      
 
 
-    <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+          <div class="row">
+          <div class="container col-sm-3" id="Weather">
+          <div id="WeatherAPI">
+            <img src="assets/images/Diary(1).jpeg" class="auth-image" alt="Your Name">
+          </div>
+          </div>
+        
+
+          <div class="container col-sm-6" id="NewsArticles">
+          <div id="NewsArticlesAPI">
+            <img src="assets/images/Diary(2).jpg" class="auth-image" alt="Your Name">
+          </div>
+          </div>
+        
+
+
+          </div>  <!--close the row-->
+    </section>
   
 
-    <script type="text/javascript" src="assets/javascript/app.js"></script>
+
+
+
+    <section class="sidebar col-sm-3" id="sidebar">
+    
+      <div id="movies and music">
+      <img src="assets/images/Diary(3).jpg" class="auth-image" alt="Your Name">
+      </div>
+    
+    </section>
+
+  </div>  <!--close the main-container-->
+
+
+   
+  
+
+   
+
+
+ <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+  <script type="text/javascript" src="assets/javascript/app.js"></script>
 
     <script type="text/javascript" src="assets/javascript/nyt-api.js"></script>
 
