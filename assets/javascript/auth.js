@@ -19,7 +19,7 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
   // The signed-in user info.
   var user = result.user;
   // console.log(token);
-  // console.log(user);
+  console.log(result.user);
   // ...
 }).catch(function(error) {
   // Handle Errors here.
