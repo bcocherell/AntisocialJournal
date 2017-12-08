@@ -16,6 +16,9 @@ $(document).ready(function () {
   };
   firebase.initializeApp(config);
 
+
+  var database = firebase.database();
+
   $( function() {
     $( "#calendar" ).datepicker();
   } );
