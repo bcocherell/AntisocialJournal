@@ -11,7 +11,7 @@ $(document).ready(function () {
     authDomain: "antisocial-network-187818.firebaseapp.com",
     databaseURL: "https://antisocial-network-187818.firebaseio.com",
     projectId: "antisocial-network-187818",
-    storageBucket: "",
+    storageBucket: "antisocial-network-187818.appspot.com",
     messagingSenderId: "538567016572"
   };
   firebase.initializeApp(config);
