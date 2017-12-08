@@ -24,7 +24,9 @@ function displayMovies(date) {
 	    'include_video': 'false',
 	    'page': '1',
 	    'primary_release_date.gte': primary_release_date_gte,
-	    'primary_release_date.lte': primary_release_date_lte
+	    'primary_release_date.lte': primary_release_date_lte,
+	    'release_date.gte': primary_release_date_gte,
+	    'release_date.lte': primary_release_date_lte
 	});
 
 	$.ajax({
@@ -34,11 +36,11 @@ function displayMovies(date) {
 
 		var movies = response.results;
 		var posterCount = 0;
-		
+
 		$('#movies').empty();
 
-		var p = $('<p>').html('<small>Popular movies at the time</small>');
-		$('#movies').append(p);
+		// var p = $('<p>').html('<small>Popular movies at the time</small>');
+		// $('#movies').append(p);
 
 		for (var i = 0; i < movies.length && i < 10; i++) {
 
