@@ -22,9 +22,29 @@
       integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
       crossorigin="anonymous"></script>
 
-    
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
+ +  <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+ +
+ +  <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+ +<script>
+ +    
+ +  <!-- include summernote -->
+ +<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" />  
+ +<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" />  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
 
+  <script type="text/javascript">
+    $(function() {
+      $('#entry').summernote({
+        height: 200,
+        tabsize: 2,
+        toolbarContainer : "#toolbar"
+      });
+    });
+  </script>
+  <script src="assets/summernote.js"></script>
 </head>
 
 <BODY>
@@ -54,16 +74,13 @@
 
 <div class="container col-sm-6" id="Journal">
 
-      <h1>Journal Post</h1>
-                   <form id="journalEntryForTheDay" role="form">
-                  <h3><u>Add a journal entry to save for this date.</u></h3>
-                  <div class="form-group">
-                      <label for="action-input">Type Your Post Below</label>
-         <div class="col-sm-3">
-             <textarea name="Text1" cols="40" rows="5"></textarea>
-                  </div>
-                  <input id="userAddButton" type="submit" value="Save Your Post" class="btn btn-primary">
-              </form>    
+     Make your stuff at least look good
+
+<div id="toolbar"></div>
+
+<p>People Suck.</p>
+<textarea class="summernote" id= "entry">Leave me alone!!!!!!!</textarea>
+  <button class="btn btn-primary" id="add-journal-btn" type="submit">Submit your angst</button>
           </div>
     </div>
   
