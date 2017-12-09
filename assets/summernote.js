@@ -25,28 +25,28 @@ function clearEntry() {
 }
 
 // 2. Button for adding journal html 34
-$("#add-journal-btn").on("click", function(event) {
-  event.preventDefault();
+$(function() {
+      $("#add-journal-btn").on("click", function(event) {
+        event.preventDefault();
 
-  
 
-  var entry = getEntry();
-  // Uploads employee data to the database
-  database.ref('/entries').push(entry);
 
-  // Alert
-  alert("Entry successfully added");
+        var entry = getEntry();
+      // Uploads employee data to the database
+      database.ref('/entries').push(entry);
 
-  // Clears all of the text-boxes
-  clearEntry();
-  
+      // Alert
+      alert("Entry successfully added");
+
+      // Clears all of the text-boxes
+      clearEntry();
+      
+    });
+
+  // 3. Create Firebase event for adding employee to the database and a row in the html when a user adds an entry
+  database.ref('/entries').on("child_added", function(childSnapshot, prevChildKey) {
+
+    // Add each train's data into the table
+    debugger;
+  });
 });
-
-// 3. Create Firebase event for adding employee to the database and a row in the html when a user adds an entry
-database.ref('/entries').on("child_added", function(childSnapshot, prevChildKey) {
-
-  // Add each train's data into the table
-  debugger;
-});
-
-console.log('hello world')
