@@ -20,6 +20,8 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
   var user = result.user;
   console.log(token);
   console.log(result.user);
+  console.log('new user?: ' + reusult.additionalUserInfo.isNewUser);
+  // firebase.database().ref(result.user.uka.u.id);
   // ...
 }).catch(function(error) {
   // Handle Errors here.
