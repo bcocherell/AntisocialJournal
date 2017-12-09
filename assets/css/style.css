@@ -1,4 +1,58 @@
-.jqx-layout-group-auto-hide-content-vertical
+.jqx-layout-gro-up-auto-hide-content-vertical
 {
     width: 200px;
+}
+
+#journalEntryForTheDay{
+	float: right;
+}
+
+#WeatherAPI {
+	float: left;
+}
+
+#NewsArticlesAPI {
+	float: right;
+}
+
+#calendar {
+	float: left;
+}
+
+#date {
+	background-color: green;
+	float: left;
+}
+
+#Journal {
+	background-color: blue;
+	float: right;
+}
+
+#Weather {
+	background-color: red;
+	float:  left;
+}
+
+#NewsArticles {
+	background-color:  orange;
+	float: right;
+}
+
+
+#sidebar {
+	background-color: purple;
+
+.img-movie {
+    max-width: 50%;
+    float: left;
+}
+
+.img-movie:hover {
+  opacity: 0.8; 
+  transition:all 0.3s ease;
+}
+
+#weather {
+	text-align: center;
 }
