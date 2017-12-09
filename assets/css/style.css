@@ -8,15 +8,12 @@ body {
   	-o-background-size: cover;
 }
 
-
-
-
- h1 {
-	font-size: 100px;
-	text-align: center;
-	color: black;
+h1 {
+	font-size:  100px;
 	background-color: silver;
-} 
+	color: black;
+	text-align: center;
+}
 
 .jqx-layout-gro-up-auto-hide-content-vertical
 {
@@ -76,5 +73,3 @@ body {
 #weather {
 	text-align: center;
 }
-
-

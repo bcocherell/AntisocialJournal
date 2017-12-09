@@ -22,15 +22,14 @@
       integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
       crossorigin="anonymous"></script>
 
-      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
- +  <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
- +
- +  <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
- +<script>
- +    
- +  <!-- include summernote -->
- +<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" />  
- +<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
+  <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+ 
+  <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+  <script>
+     //include summernote 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" />  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" />  
 <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
@@ -44,88 +43,90 @@
       });
     });
   </script>
+  
   <script src="assets/summernote.js"></script>
 </head>
 
 <BODY>
-
+  
+    <!--adding heading to the webpage-->
     <div class="container" id="logo">
-      <h1>AntisocialJournal</h1>
+      <h1>Antisocial Journal</h1>
     </div>
  
-
+    <!--the main container.  this container has a main section and a sidebar-->
     <div id="main-container" class="container">
 
+    <!--main section.  will contain journal posts, news articles, weather, and a calendar-->
     <section class="main-section col-sm-9" id="main-section">
     
-
+    <!--adding a row-->
     <div class="row">
+
+    <!--the calendar-->
     <div class="container col-sm-3" id="date">
    
     <p>Date: <input type="text" id="calendar">
       <input id="dateSubmit" type="submit" value="Submit" class="btn btn-primary">
     </p>
 
-    </div>
+    </div> <!--closing the calendar div-->
 
-<div class="container col-sm-6" id="Journal">
 
+    <!--the area to submit journal posts-->
+    <div class="container col-sm-6" id="Journal">
 
      Make your stuff at least look good
 
-<div id="toolbar"></div>
+    <div id="toolbar"></div>
 
-<p>People Suck.</p>
-<textarea class="summernote" id= "entry">Leave me alone!!!!!!!</textarea>
-  <button class="btn btn-primary" id="add-journal-btn" type="submit">Submit your angst</button>
-          </div>
-    </div>
+    <p>People Suck.</p>
+    <textarea class="summernote" id= "entry">Leave me alone!!!!!!!</textarea>
+    <button class="btn btn-primary" id="add-journal-btn" type="submit">Submit your angst</button>
+    </div>  <!--closing section for journal posts-->
+
+    </div>  <!--closing the row-->
+
+
+    <!--adding a second row-->
+    <div class="row">
+
+    <!--the section for the weather api-->
+    <div class="container col-sm-3" id="Weather">
+      <div id="WeatherAPI">
+        <img src="assets/images/Diary(1).jpeg" class="auth-image" alt="Your Name">
+       </div>  
+      </div> <!--closing the section for weather api-->
+    
   
-      
-
-
-          <div class="row">
-          <div class="container col-sm-3" id="Weather">
-          <div id="WeatherAPI">
-            <img src="assets/images/Diary(1).jpeg" class="auth-image" alt="Your Name">
-          </div>
-          </div>
-        
-
-          <div class="container col-sm-6" id="NewsArticles">
+    <!--adding the area for news articles-->
+    <div class="container col-sm-6" id="NewsArticles">
           <div id="NewsArticlesAPI">
             <img src="assets/images/Diary(2).jpg" class="auth-image" alt="Your Name">
           </div>
-          </div>
+    </div>  <!--closing the section for news articles-->
         
+    </div>  <!--closing the row-->
 
 
-          </div>  <!--close the row-->
-    </section>
+    </section>  <!--closing the main section-->
   
 
-
-
-
+    <!--adding a sidebar that will give movies and music of the journal date-->
     <section class="sidebar col-sm-3" id="sidebar">
-    
+  
       <div id="movies and music">
-      <img src="assets/images/Diary(3).jpg" class="auth-image" alt="Your Name">
+        <img src="assets/images/Diary(3).jpg" class="auth-image" alt="Your Name">
       </div>
     
-    </section>
+    </section>  <!--closing the sidebar section-->
 
-  </div>  <!--close the main-container-->
-
-
-   
-  
-
-   
+    
+    </div>  <!--closing the main-container-->
 
 
- <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
-  <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
 
     <script type="text/javascript" src="assets/javascript/auth.js"></script>
     
