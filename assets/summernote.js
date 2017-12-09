@@ -1,14 +1,16 @@
 // 1. Initialize Firebase
 var config = {
-  apiKey: "AIzaSyA_QypGPkcjPtylRDscf7-HQl8ribnFeIs",
-  authDomain: "time-sheet-55009.firebaseapp.com",
-  databaseURL: "https://time-sheet-55009.firebaseio.com",
-  storageBucket: "time-sheet-55009.appspot.com"
-};
+    apiKey: "AIzaSyD0ZB74rJGKM-S0jSnWJxGpheUsc2FEzf0",
+    authDomain: "antisocial-network-187818.firebaseapp.com",
+    databaseURL: "https://antisocial-network-187818.firebaseio.com",
+    projectId: "antisocial-network-187818",
+    storageBucket: "antisocial-network-187818.appspot.com",
+    messagingSenderId: "538567016572"
+  };
+  firebase.initializeApp(config);
 
-firebase.initializeApp(config);
 
-var database = firebase.database();
+  var database = firebase.database();
 
 function getEntry() {
   var html = $('#entry').summernote('code');
@@ -29,24 +31,23 @@ $(function() {
       $("#add-journal-btn").on("click", function(event) {
         event.preventDefault();
 
-
-
         var entry = getEntry();
-      // Uploads employee data to the database
-      database.ref('/entries').push(entry);
+        // Uploads employee data to the database
 
-      // Alert
-      alert("Entry successfully added");
+        console.log(entry)
+        database.ref("entries/").push(entry);
 
-      // Clears all of the text-boxes
-      clearEntry();
-      
-    });
+        // Alert
+        alert("Entry successfully added");
+
+        // Clears all of the text-boxes
+        clearEntry();   
+      });
 
   // 3. Create Firebase event for adding employee to the database and a row in the html when a user adds an entry
-  database.ref('/entries').on("child_added", function(childSnapshot, prevChildKey) {
+  database.ref("entries/").on("child_added", function(childSnapshot, prevChildKey) {
 
-    
-    debugger;
+    console.log(childSnapshot.val())
+    // debugger;
   });
 });
