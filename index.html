@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Antisocial Journal</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Antisocial Journal</title>
 
-	<!--linking my bootstrap and css style sheets-->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!--linking my bootstrap and css style sheets-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
   <!--jQuery UI Datepicker - Default functionality-->
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script
+  <link rel="stylesheet" href="./assets/css/style.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script
       src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
       integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
       crossorigin="anonymous"></script>
@@ -29,21 +29,93 @@
 
 <BODY>
 
-<p>Date: <input type="text" id="calendar"></p>
+
+<p>Date: <input type="text" id="calendar">
+  <input id="dateSubmit" type="submit" value="Submit" class="btn btn-primary">
+</p>
+
+ 
+
+<div id="main-container" class="container">
+
+    <section class="main-section col-sm-9" id="main-section">
+    
+
+    <div class="row">
+    <div class="container col-sm-3" id="date">
+   
+    <p>Date: <input type="text" id="calendar"></p>
+    </div>
+
+<div class="container col-sm-6" id="Journal">
+
+      <h1>Journal Post</h1>
+                   <form id="journalEntryForTheDay" role="form">
+                  <h3><u>Add a journal entry to save for this date.</u></h3>
+                  <div class="form-group">
+                      <label for="action-input">Type Your Post Below</label>
+         <div class="col-sm-3">
+             <textarea name="Text1" cols="40" rows="5"></textarea>
+                  </div>
+                  <input id="userAddButton" type="submit" value="Save Your Post" class="btn btn-primary">
+              </form>    
+          </div>
+    </div>
+  
+      
 
 
-    <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+          <div class="row">
+          <div class="container col-sm-3" id="Weather">
+          <div id="WeatherAPI">
+            <img src="assets/images/Diary(1).jpeg" class="auth-image" alt="Your Name">
+          </div>
+          </div>
+        
+
+          <div class="container col-sm-6" id="NewsArticles">
+          <div id="NewsArticlesAPI">
+            <img src="assets/images/Diary(2).jpg" class="auth-image" alt="Your Name">
+          </div>
+          </div>
+        
+
+
+          </div>  <!--close the row-->
+    </section>
   
 
-    <script type="text/javascript" src="assets/javascript/app.js"></script>
+
+
+
+    <section class="sidebar col-sm-3" id="sidebar">
+    
+      <div id="movies and music">
+      <img src="assets/images/Diary(3).jpg" class="auth-image" alt="Your Name">
+      </div>
+    
+    </section>
+
+  </div>  <!--close the main-container-->
+
+
+   
+  
+
+   
+
+
+ <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+  <script type="text/javascript" src="assets/javascript/app.js"></script>
 
     <script type="text/javascript" src="assets/javascript/auth.js"></script>
-
+    
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script src="moment.js"></script>
     <script type="text/javascript" src="assets/javascript/nyt-api.js"></script>
 
 </body>
 
 </html>
 
- 
  
