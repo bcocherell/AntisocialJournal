@@ -1,14 +1,5 @@
 $(document).ready(function () {
 
-	function formatDate(date){
-		var month = date.charAt(5) + date.charAt(6);
-		var day = date. charAt(8) + date.charAt(9);
-		var year = date.charAt(0) + date.charAt(1) + date.charAt(2) + date.charAt(3);
-
-		var formattedDate = year + month + day;
-		return formattedDate;
-	}
-
 	moment().format('YYYY-MM-DD');
 	
 	// var userDate = "19720501";	//Year must be in the format YYYYMMDD	
@@ -19,7 +10,7 @@ $(document).ready(function () {
 		console.log(date);
 
 		var beginningDateFormat = "MM/DD/YYYY";
-		var endingDateFormat = "YYYY-MM-DD";
+		var endingDateFormat = "YYYYMDD";
 
 		// returns up to 10 movies sorted by popularity around the timeframe you selected
 
@@ -30,9 +21,6 @@ $(document).ready(function () {
 		console.log('begin: ' + beginDate);
 		console.log('end: ' + endDate);
 
-		var formattedBeginDate = formatDate(beginDate);
-		var formattedEndDate = formatDate(endDate);
-
 		if (date) {
 
 			// console.log(formattedDate);
@@ -40,8 +28,8 @@ $(document).ready(function () {
 			var urlNYT = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
 		  urlNYT += '?' + $.param({
 				'api-key': "421ad4f235d44b1d98214fda597d20bd",	//NY Times API key
-				'begin_date': formattedBeginDate,
-				'end_date': formattedEndDate,
+				'begin_date': beginDate,
+				'end_date': endDate,
 				//This will return just a snippet of the article, including the web_url will allow
 				//the user to investigate further
 				'fl': "web_url, snippet",	//could also use lead_paragraph instead of snippet
@@ -50,7 +38,7 @@ $(document).ready(function () {
 				// 'facet_filter': "true"
 			});
 
-		  if (formattedBeginDate) {
+		  if (beginDate) {
 		  	$.ajax({
 			  	url: urlNYT,
 			  	method: 'GET',
