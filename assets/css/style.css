@@ -1,3 +1,23 @@
+body {
+    background: url("../images/BackgroundImage.jpg") no-repeat center center fixed;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: cover 100% 100%;
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+}
+
+
+
+
+ h1 {
+	font-size: 100px;
+	text-align: center;
+	color: black;
+	background-color: silver;
+} 
+
 .jqx-layout-gro-up-auto-hide-content-vertical
 {
     width: 200px;
@@ -57,6 +77,4 @@
 	text-align: center;
 }
 
-#masthead {
-	
-}
+
