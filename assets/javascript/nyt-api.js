@@ -69,6 +69,8 @@ $(document).ready(function () {
 			  	throw err;
 				});
 		  }
+		  var user = firebase.auth().currentUser;
+		  console.log('current user: ' + user);
 		}
 
 	});
