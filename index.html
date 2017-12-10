@@ -10,9 +10,6 @@
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" />
-
   <!--jQuery UI Datepicker - Default functionality-->
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="./assets/css/style.css">
@@ -25,15 +22,11 @@
 
   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
   <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
- 
-  <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
-
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" />  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" />  
-<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
   <script type="text/javascript">
     $(function() {
@@ -45,19 +38,19 @@
     });
   </script>
   
-  <script src="assets/summernote.js"></script>
+  
 </head>
 
 <BODY>
   
     <!--adding heading to the webpage-->
-    <div class="container" id="logo">
-      <h1>Antisocial Journal</h1>
-    </div>
+    <h1>Antisocial Journal</h1>
+
  
     <!--the main container.  this container has a main section and a sidebar-->
     <div id="main-container" class="container">
 
+  
     <!--main section.  will contain journal posts, news articles, weather, and a calendar-->
     <section class="main-section col-sm-9" id="main-section">
     
@@ -116,9 +109,20 @@
     <!--adding a sidebar that will give movies and music of the journal date-->
     <section class="sidebar col-sm-3" id="sidebar">
   
-      <div id="movies and music">
-        <img src="assets/images/Diary(3).jpg" class="auth-image" alt="Your Name">
+      <!--adding a row to the sidebar-->
+      <div class="row">
+      <div id="moviesAndMusic">
+       <img src="assets/images/Diary(3).jpg" class="auth-image" alt="Your Name">
       </div>
+      </div>  <!--closing row-->
+
+      <!--adding a second row to the sidebar-->
+      <div class="row">
+      <div id="webPagePhoto">
+        <img src="assets/images/Diary(2).jpg" class="auth-image img-responsive">
+      </div>
+      </div>  <!--closing row-->
+      
     
     </section>  <!--closing the sidebar section-->
 
@@ -127,6 +131,7 @@
 
 
     <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+    <script src="assets/summernote.js"></script>
     <script type="text/javascript" src="assets/javascript/app.js"></script>
 
     <script type="text/javascript" src="assets/javascript/auth.js"></script>
@@ -134,6 +139,8 @@
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
     <script type="text/javascript" src="assets/javascript/nyt-api.js"></script>
+
+    
 
 </body>
 

@@ -14,11 +14,11 @@ firebase.auth().languageCode = 'en';
 //To sign in with a pop-up window, call signInWithPopup:
 firebase.auth().signInWithPopup(provider).then(function(result) {
   // This gives you a Google Access Token. You can use it to access the Google API.
-  // console.log(result);
+  console.log(result);
   var token = result.credential.accessToken;
   // The signed-in user info.
   var user = result.user;
-  // console.log(token);
+  console.log(token);
   console.log(result.user);
   console.log('new user?: ' + reusult.additionalUserInfo.isNewUser);
   // firebase.database().ref(result.user.uka.u.id);
