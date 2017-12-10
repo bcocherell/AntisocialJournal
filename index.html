@@ -22,128 +22,90 @@
 
   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
   <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+ 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" />  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
 
-     //include summernote 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" />  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
-
-<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
   <script type="text/javascript">
     $(function() {
       $('#entry').summernote({
-        height: 200,
+        height: 75,
         tabsize: 2,
         toolbarContainer : "#toolbar"
       });
     });
   </script>
-  
-  
+
 </head>
 
-<BODY>
-  
-    <!--adding heading to the webpage-->
-    <h1>Antisocial Journal</h1>
+<body>
 
- 
-    <!--the main container.  this container has a main section and a sidebar-->
-    <div id="main-container" class="container">
-
-  
-    <!--main section.  will contain journal posts, news articles, weather, and a calendar-->
-    <section class="main-section col-sm-9" id="main-section">
-    
-    <!--adding a row-->
-    <div class="row">
-
-    <!--the calendar-->
-    <div class="container col-sm-3" id="date">
-   
-    <p>Date: <input type="text" id="calendar">
-      <input id="dateSubmit" type="submit" value="Submit" class="btn btn-primary">
-    </p>
-
-    </div> <!--closing the calendar div-->
-
-
-    <!--the area to submit journal posts-->
-    <div class="container col-sm-6" id="Journal">
-
-     Make your stuff at least look good
-
-    <div id="toolbar"></div>
-
-    <p>People Suck.</p>
-    <textarea class="summernote" id= "entry">Leave me alone!!!!!!!</textarea>
-    <button class="btn btn-primary" id="add-journal-btn" type="submit">Submit your angst</button>
-    </div>  <!--closing section for journal posts-->
-
-    </div>  <!--closing the row-->
-
-
-    <!--adding a second row-->
-    <div class="row">
-
-    <!--the section for the weather api-->
-    <div class="container col-sm-3" id="Weather">
-      <div id="WeatherAPI">
-        <img src="assets/images/Diary(1).jpeg" class="auth-image" alt="Your Name">
-       </div>  
-      </div> <!--closing the section for weather api-->
-    
-  
-    <!--adding the area for news articles-->
-    <div class="container col-sm-6" id="NewsArticles">
-          <div id="NewsArticlesAPI">
-            <img src="assets/images/Diary(2).jpg" class="auth-image" alt="Your Name">
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="text-center">Antisocial Network</h1>
+  </div>
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+            <input type="text" class="form-control" id="calendar">
           </div>
-    </div>  <!--closing the section for news articles-->
-        
-    </div>  <!--closing the row-->
-
-
-    </section>  <!--closing the main section-->
-  
-
-    <!--adding a sidebar that will give movies and music of the journal date-->
-    <section class="sidebar col-sm-3" id="sidebar">
-  
-      <!--adding a row to the sidebar-->
-      <div class="row">
-      <div id="moviesAndMusic">
-       <img src="assets/images/Diary(3).jpg" class="auth-image" alt="Your Name">
+        </div>
       </div>
-      </div>  <!--closing row-->
-
-      <!--adding a second row to the sidebar-->
-      <div class="row">
-      <div id="webPagePhoto">
-        <img src="assets/images/Diary(2).jpg" class="auth-image img-responsive">
+    </div>
+    <div class="col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div id="toolbar"></div>
+          <textarea class="summernote" id= "entry" rows="1">Leave me alone!!!!!!!</textarea>
+          <button class="btn btn-primary" id="add-journal-btn" type="submit">Submit your angst</button>
+        </div>
       </div>
-      </div>  <!--closing row-->
-      
-    
-    </section>  <!--closing the sidebar section-->
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <p>
+            Return posts here
+          </p>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">NYT Articles</div>
+        <div class="panel-body" id="NewsArticlesAPI">
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="panel panel-default">
+        <div class="panel-heading">Historic Weather Data</div>
+        <div class="panel-body" id="weather">
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">Popular Movies at the Time</div>
+        <div class="panel-body" id="movies">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <!--close the main-container-->
 
-    
-    </div>  <!--closing the main-container-->
-
-
-    <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
-    <script src="assets/summernote.js"></script>
-    <script type="text/javascript" src="assets/javascript/app.js"></script>
-
-    <script type="text/javascript" src="assets/javascript/auth.js"></script>
-    
-    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-
-    <script type="text/javascript" src="assets/javascript/nyt-api.js"></script>
-
-    
+<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+<script type="text/javascript" src="assets/javascript/movie.js"></script>
+<script type="text/javascript" src="assets/javascript/weather.js"></script>
+<script type="text/javascript" src="assets/javascript/nyt-api.js"></script>
+<script type="text/javascript" src="assets/javascript/app.js"></script>
+<script type="text/javascript" src="assets/javascript/auth.js"></script>
+<script src="https://darkskyapp.github.io/skycons/skycons.js"></script>
 
 </body>
+
 
 </html>
 

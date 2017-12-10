@@ -1,13 +1,8 @@
 body {
-    background: url("../images/BackgroundImage.jpg") no-repeat center center fixed;
-    z-index: -1;
-    background-repeat: no-repeat;
-    background-size: cover 100% 100%;
-  	-webkit-background-size: cover;
-  	-moz-background-size: cover;
-  	-o-background-size: cover;
+    background: url("../images/BackgroundImage.jpg")
 }
 
+/*
 h1 {
 	font-size:  80px;
 	background-color: silver;
@@ -59,6 +54,7 @@ h1 {
 
 #sidebar {
 }
+*/
 
 .img-movie {
     max-width: 50%;
@@ -74,6 +70,7 @@ h1 {
 	text-align: center;
 }
 
+/*
 #webPagePhoto {
    margin: 20px;
    padding-left: 40px;
@@ -81,7 +78,8 @@ h1 {
    background-color: black;
    float: center;
 }
+*/
 
-#moviesAndMusic {
-	background-color: purple;
+#movies {
+	text-align: center;
 }
