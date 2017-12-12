@@ -20,7 +20,6 @@ function renderSections() {
     }
 
     $('#calendar').val(date);
-    console.log(date);
     displayMovies(date);
     displayWeather(date);
     displayArticles(date);
