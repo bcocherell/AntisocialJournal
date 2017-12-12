@@ -43,11 +43,9 @@ $(document).ready(function() {
     if (user) {
       $('#summernote').summernote('enable');
       $('#login-logout').text('Logout');
-
       var img = $('<img class="img-circle" width="32" height="32">');
       img.attr('src', user.photoURL);
       $('#profile-pic').append(img);
-      console.log('logged in');
       renderSections();
       
     } else {
@@ -55,7 +53,6 @@ $(document).ready(function() {
       $('#login-logout').text('Login');
       $('#profile-pic').empty();
       $('#posts').empty();
-      console.log('not logged in');
       renderSections();
     }
   });
