@@ -47,6 +47,7 @@ $(document).ready(function() {
       var img = $('<img class="img-circle" width="32" height="32">');
       img.attr('src', user.photoURL);
       $('#profile-pic').append(img);
+      displayEntries(date);
       
     } else {
       $('#summernote').summernote('disable');

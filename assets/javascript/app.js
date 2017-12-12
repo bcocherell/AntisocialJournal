@@ -7,7 +7,7 @@ $(document).ready(function () {
             displayMovies(date);
             displayWeather(date);
             displayArticles(date);
-            displayEntries(date);
+            displayEntries(date)
           }
         }
     });
@@ -20,5 +20,4 @@ $(document).ready(function () {
   displayMovies(date);
   displayWeather(date);
   displayArticles(date);
-  displayEntries(date);
 });
