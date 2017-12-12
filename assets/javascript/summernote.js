@@ -36,7 +36,6 @@ function displayEntries(date) {
       var panelBody = $('<div class="panel-body post">').html(snapshot.val());
       panel.append(panelBody);
       $('#posts').append(panel);
-      console.log(snapshot.val());
 
     });
   }
