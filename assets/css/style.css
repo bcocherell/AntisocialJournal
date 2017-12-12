@@ -2,60 +2,6 @@ body {
     background: url("../images/BackgroundImage.jpg")
 }
 
-/*
-h1 {
-	font-size:  80px;
-	background-color: silver;
-	color: black;
-	text-align: center;
-}
-
-.jqx-layout-gro-up-auto-hide-content-vertical
-{
-    width: 200px;
-}
-
-#journalEntryForTheDay{
-	float: right;
-}
-
-#WeatherAPI {
-	float: left;
-}
-
-#NewsArticlesAPI {
-	float: right;
-}
-
-#calendar {
-	float: left;
-}
-
-#date {
-	background-color: green;
-	float: left;
-}
-
-#Journal {
-	background-color: blue;
-	float: right;
-}
-
-#Weather {
-	background-color: red;
-	float:  left;
-}
-
-#NewsArticles {
-	background-color:  orange;
-	float: right;
-}
-
-
-#sidebar {
-}
-*/
-
 .img-movie {
     max-width: 50%;
     float: left;
@@ -69,16 +15,6 @@ h1 {
 #weather {
 	text-align: center;
 }
-
-/*
-#webPagePhoto {
-   margin: 20px;
-   padding-left: 40px;
-   border:10px solid silver;
-   background-color: black;
-   float: center;
-}
-*/
 
 #movies {
 	text-align: center;

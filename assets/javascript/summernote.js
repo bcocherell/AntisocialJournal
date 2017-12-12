@@ -21,12 +21,18 @@ $(document).on('click','#add-journal-btn', function(event) {
   }
 });
 
+// Displays entries for the date specificed for the logged in user
+
 function displayEntries(date) {
 
   var user = firebase.auth().currentUser;
 
+  // Checking if user logged in or not
+
   if (user) {
     $('#posts').empty();
+
+    // Query firebase for posts
 
     var ref = firebase.database().ref(user.uid + '/' + moment(date, 'MM/DD/YYYY').format('YYYYMMDD'));
 
@@ -34,7 +40,7 @@ function displayEntries(date) {
       var panel = $('<div class="panel panel-default">');
       var panelBody = $('<div class="panel-body post">').html(snapshot.val());
       panel.append(panelBody);
-      $('#posts').append(panel);
+      $('#posts').prepend(panel);
 
     });
   }

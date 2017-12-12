@@ -6,6 +6,8 @@ $(document).ready(function() {
   // To apply the default browser preference instead of explicitly setting it.
   firebase.auth().useDeviceLanguage();
 
+  // On click event for button, will either log you in or log you out depending on the state
+
   $(document).on('click','#login', function(event) {
     event.preventDefault();
 
@@ -39,8 +41,12 @@ $(document).ready(function() {
     }
   });
 
+  // Event to track when user logs in or out and performs certain actions depending on what happened
+
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
+      // User just logged in, so display their stuff
+
       $('#summernote').summernote('enable');
       $('#login-logout').text('Logout');
       var img = $('<img class="img-circle" width="32" height="32">');
@@ -49,6 +55,8 @@ $(document).ready(function() {
       renderSections();
       
     } else {
+
+      // User just logged out, so clear sections and disable summernote
       $('#summernote').summernote('disable');
       $('#login-logout').text('Login');
       $('#profile-pic').empty();
