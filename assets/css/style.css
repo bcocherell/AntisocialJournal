@@ -87,3 +87,7 @@ h1 {
 #post {
 	overflow: auto;
 }
+
+.img-circle {
+    border-radius: 50%;
+}

@@ -4,21 +4,24 @@ $(document).ready(function () {
     $('#calendar').datepicker( {
         onClose: function(date) {
           if (date) {
-            displayMovies(date);
-            displayWeather(date);
-            displayArticles(date);
-            displayEntries(date);
+            displayStuff();
           }
         }
     });
   });
-
-  // setting up current date on page load
-  var date = moment().format('MM/DD/YYYY');
-
-  $('#calendar').val(date);
-  displayMovies(date);
-  displayWeather(date);
-  displayArticles(date);
-  displayEntries(date);
 });
+
+function displayStuff() {
+    
+    var date = moment($("#calendar").datepicker("getDate")).format('MM/DD/YYYY');
+
+    if (date === "Invalid date") {
+      date = moment().format('MM/DD/YYYY');
+    }
+
+    $('#calendar').val(date);
+    displayMovies(date);
+    displayWeather(date);
+    displayArticles(date);
+    displayEntries(date);
+  }

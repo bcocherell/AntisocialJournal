@@ -43,19 +43,18 @@ $(document).ready(function() {
     if (user) {
       $('#summernote').summernote('enable');
       $('#login-logout').text('Logout');
-      $('#user-info').text('(User: ' + user.displayName + ')');
-      console.log(user.photoURL);
+
+      var img = $('<img class="img-circle" width="32" height="32">');
+      img.attr('src', user.photoURL);
+      $('#profile-pic').append(img);
+      
     } else {
       $('#summernote').summernote('disable');
       $('#login-logout').text('Login');
-      $('#user-info').empty();
+      $('#profile-pic').empty();
+      $('#posts').empty();
+      displayStuff();
     }
   });
 
 });
-
-
-// setup firebase
-// checks if user signed in
-  // if not log them in
-

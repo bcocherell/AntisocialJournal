@@ -12,7 +12,7 @@ $(document).on('click','#add-journal-btn', function(event) {
 
     var date = moment($("#calendar").datepicker("getDate")).format('YYYYMMDD');
 
-    database.ref("entries/" + date).push(html);
+    database.ref(user.uid + '/' + date).push(html);
 
     // reset and place focus on summernote
 
@@ -22,18 +22,22 @@ $(document).on('click','#add-journal-btn', function(event) {
 });
 
 function displayEntries(date) {
-  
-  $('#posts').empty();
 
-  var ref = firebase.database().ref("entries/" + moment(date, 'MM/DD/YYYY').format('YYYYMMDD'));
+  var user = firebase.auth().currentUser;
 
-  ref.orderByKey().on("child_added", function(snapshot) {
-    var panel = $('<div class="panel panel-default">');
-    var panelBody = $('<div class="panel-body post">').html(snapshot.val());
-    panel.append(panelBody);
-    $('#posts').append(panel);
-    console.log(snapshot.val());
+  if (user) {
+    $('#posts').empty();
 
-  });
+    var ref = firebase.database().ref(user.uid + '/' + moment(date, 'MM/DD/YYYY').format('YYYYMMDD'));
+
+    ref.orderByKey().on("child_added", function(snapshot) {
+      var panel = $('<div class="panel panel-default">');
+      var panelBody = $('<div class="panel-body post">').html(snapshot.val());
+      panel.append(panelBody);
+      $('#posts').append(panel);
+      console.log(snapshot.val());
+
+    });
+  }
 }
   
