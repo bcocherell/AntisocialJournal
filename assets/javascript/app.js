@@ -9,6 +9,9 @@ $(document).ready(function () {
         }
     });
   });
+
+  displayStuff();
+
 });
 
 function displayStuff() {

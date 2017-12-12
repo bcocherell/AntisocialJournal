@@ -13,6 +13,7 @@ $(document).on('click','#add-journal-btn', function(event) {
     var date = moment($("#calendar").datepicker("getDate")).format('YYYYMMDD');
 
     database.ref(user.uid + '/' + date).push(html);
+    displayEntries(date);
 
     // reset and place focus on summernote
 
