@@ -56,7 +56,7 @@ function displayWeather(date) {
     $('#weather').append(high);    
     $('#weather').append(low);  
 
-    var p = $('<p>').html('<small>Powered by <a href="https://darksky.net/poweredby/">Dark Sky</a></small>');
+    var p = $('<p>').html('<small>Powered by <a href="https://darksky.net/poweredby/" target="_blank">Dark Sky</a></small>');
     $('#weather').append(p);        
 
   });

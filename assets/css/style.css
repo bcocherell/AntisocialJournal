@@ -1,63 +1,5 @@
 body {
-    background: url("../images/BackgroundImage.jpg") no-repeat center center fixed;
-    z-index: -1;
-    background-repeat: no-repeat;
-    background-size: cover 100% 100%;
-  	-webkit-background-size: cover;
-  	-moz-background-size: cover;
-  	-o-background-size: cover;
-}
-
-h1 {
-	font-size:  80px;
-	background-color: silver;
-	color: black;
-	text-align: center;
-}
-
-.jqx-layout-gro-up-auto-hide-content-vertical
-{
-    width: 200px;
-}
-
-#journalEntryForTheDay{
-	float: right;
-}
-
-#WeatherAPI {
-	float: left;
-}
-
-#NewsArticlesAPI {
-	float: right;
-}
-
-#calendar {
-	float: left;
-}
-
-#date {
-	background-color: green;
-	float: left;
-}
-
-#Journal {
-	background-color: blue;
-	float: right;
-}
-
-#Weather {
-	background-color: red;
-	float:  left;
-}
-
-#NewsArticles {
-	background-color:  orange;
-	float: right;
-}
-
-
-#sidebar {
+    background: url("../images/BackgroundImage.jpg")
 }
 
 .img-movie {
@@ -74,14 +16,18 @@ h1 {
 	text-align: center;
 }
 
-#webPagePhoto {
-   margin: 20px;
-   padding-left: 40px;
-   border:10px solid silver;
-   background-color: black;
-   float: center;
+#movies {
+	text-align: center;
 }
 
-#moviesAndMusic {
-	background-color: purple;
+.post {
+	overflow: auto;
+}
+
+#NewsArticlesAPI {
+	overflow: auto;
+} 
+
+.img-circle {
+    border-radius: 50%;
 }
