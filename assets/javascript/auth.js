@@ -53,7 +53,6 @@ $(document).ready(function() {
       $('#login-logout').text('Login');
       $('#profile-pic').empty();
       $('#posts').empty();
-      displayStuff();
     }
   });
 
