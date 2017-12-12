@@ -24,6 +24,10 @@ body {
 	overflow: auto;
 }
 
+#NewsArticlesAPI {
+	overflow: auto;
+} 
+
 .img-circle {
     border-radius: 50%;
 }
