@@ -4,7 +4,7 @@ $(document).ready(function () {
     $('#calendar').datepicker( {
         onClose: function(date) {
           if (date) {
-            displayStuff();
+            renderSections();
           }
         }
     });
