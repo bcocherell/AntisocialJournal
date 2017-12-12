@@ -84,7 +84,7 @@ h1 {
 	text-align: center;
 }
 
-#post {
+.post {
 	overflow: auto;
 }
 
