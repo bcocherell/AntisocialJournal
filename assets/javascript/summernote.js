@@ -22,23 +22,25 @@ $(document).on('click','#add-journal-btn', function(event) {
   }
 });
 
-function displayEntries(date) {
+$(document).ready(function() {
 
-  var user = firebase.auth().currentUser;
+  function displayEntries(date) {
 
-  if (user) {
-    $('#posts').empty();
+    var user = firebase.auth().currentUser;
 
-    var ref = firebase.database().ref(user.uid + '/' + moment(date, 'MM/DD/YYYY').format('YYYYMMDD'));
+    if (user) {
+      $('#posts').empty();
 
-    ref.orderByKey().on("child_added", function(snapshot) {
-      var panel = $('<div class="panel panel-default">');
-      var panelBody = $('<div class="panel-body post">').html(snapshot.val());
-      panel.append(panelBody);
-      $('#posts').append(panel);
-      console.log(snapshot.val());
+      var ref = firebase.database().ref(user.uid + '/' + moment(date, 'MM/DD/YYYY').format('YYYYMMDD'));
 
-    });
+      ref.orderByKey().on("child_added", function(snapshot) {
+        var panel = $('<div class="panel panel-default">');
+        var panelBody = $('<div class="panel-body post">').html(snapshot.val());
+        panel.append(panelBody);
+        $('#posts').append(panel);
+        console.log(snapshot.val());
+
+      });
+    }
   }
-}
-  
+});
