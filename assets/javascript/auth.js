@@ -47,13 +47,16 @@ $(document).ready(function() {
       var img = $('<img class="img-circle" width="32" height="32">');
       img.attr('src', user.photoURL);
       $('#profile-pic').append(img);
-      displayEntries(date);
+      console.log('logged in');
+      renderSections();
       
     } else {
       $('#summernote').summernote('disable');
       $('#login-logout').text('Login');
       $('#profile-pic').empty();
       $('#posts').empty();
+      console.log('not logged in');
+      renderSections();
     }
   });
 
