@@ -5,38 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Antisocial Journal</title>
 
-  <!--linking my bootstrap and css style sheets-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- include libraries(jQuery, bootstrap) -->
+  <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script> 
+  <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script> 
+  
+  <!-- include libraries(jQuery UI) -->
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script> 
+  <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-  <!--jQuery UI Datepicker - Default functionality-->
-  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="./assets/css/style.css">
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script
-      src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
-      integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
-      crossorigin="anonymous"></script>
-
-  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
-  <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
- 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" />  
+  <!-- include summernote css/js-->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
 
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
-  <script type="text/javascript">
-    $(function() {
-      $('#entry').summernote({
-        height: 75,
-        tabsize: 2,
-        toolbarContainer : "#toolbar"
-      });
-    });
-  </script>
+  <link type="text/css" href="assets/css/style.css" rel="stylesheet">
 
 </head>
 
@@ -62,16 +44,15 @@
     <div class="col-sm-6">
       <div class="panel panel-default">
         <div class="panel-body">
-          <div id="toolbar"></div>
-          <textarea class="summernote" id= "entry" rows="1">Leave me alone!!!!!!!</textarea>
+          <!-- <div id="toolbar"></div>
+          <textarea class="summernote" id= "entry" rows="1">Leave me alone!!!!!!!</textarea> -->
+          <div id="summernote"></div>
           <button class="btn btn-primary" id="add-journal-btn" type="submit">Submit your angst</button>
         </div>
       </div>
       <div class="panel panel-default">
-        <div class="panel-body">
-          <p>
-            Return posts here
-          </p>
+        <div class="panel-heading">This Day's Posts</div>
+        <div class="panel-body" id="posts">          
         </div>
       </div>
       <div class="panel panel-default">
@@ -94,19 +75,41 @@
     </div>
   </div>
 </div>
-  <!--close the main-container-->
+
+<script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD0ZB74rJGKM-S0jSnWJxGpheUsc2FEzf0",
+    authDomain: "antisocial-network-187818.firebaseapp.com",
+    databaseURL: "https://antisocial-network-187818.firebaseio.com",
+    projectId: "antisocial-network-187818",
+    storageBucket: "antisocial-network-187818.appspot.com",
+    messagingSenderId: "538567016572"
+  };
+
+  firebase.initializeApp(config);
+
+</script>
+
+<script type="text/javascript">
+  //Initialize summernote
+  $(document).ready(function() {
+      $('#summernote').summernote({
+        placeholder: "How's your day going? Probably not good if you're coming to this site..."
+      });
+    });
+</script>
 
 <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+<script type="text/javascript" src="assets/javascript/auth.js"></script>
 <script type="text/javascript" src="assets/javascript/movie.js"></script>
 <script type="text/javascript" src="assets/javascript/weather.js"></script>
 <script type="text/javascript" src="assets/javascript/nyt-api.js"></script>
+<script type="text/javascript" src="assets/javascript/summernote.js"></script>
 <script type="text/javascript" src="assets/javascript/app.js"></script>
-<script type="text/javascript" src="assets/javascript/auth.js"></script>
 <script src="https://darkskyapp.github.io/skycons/skycons.js"></script>
 
 </body>
 
-
-</html>
-
- 
+</html> 

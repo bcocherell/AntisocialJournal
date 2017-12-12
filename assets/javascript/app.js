@@ -2,10 +2,13 @@ $(document).ready(function () {
 
   $(function() {
     $('#calendar').datepicker( {
-        onSelect: function(date) {
+        onClose: function(date) {
+          if (date) {
             displayMovies(date);
             displayWeather(date);
             displayArticles(date);
+            displayEntries(date);
+          }
         }
     });
   });
@@ -17,5 +20,5 @@ $(document).ready(function () {
   displayMovies(date);
   displayWeather(date);
   displayArticles(date);
-
+  displayEntries(date);
 });
