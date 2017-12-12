@@ -26,7 +26,14 @@
 
 <div class="container">
   <div class="jumbotron">
-    <h1 class="text-center">Antisocial Network</h1>
+    <h1>Antisocial Network</h1>
+    <p>blah blah blah... no one cares...</p>
+    <p>
+      <button class="btn btn-primary" id="login" type="submit">
+        <span id="login-logout">Login</span>
+      </button>
+      &nbsp;<small id="user-info"></small>
+    </p>
   </div>
   <div class="row">
     <div class="col-sm-3">
@@ -98,6 +105,7 @@
       $('#summernote').summernote({
         placeholder: "How's your day going? Probably not good if you're coming to this site..."
       });
+      $('#summernote').summernote('disable');
     });
 </script>
 

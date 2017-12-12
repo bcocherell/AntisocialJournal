@@ -6,31 +6,51 @@ $(document).ready(function() {
   // To apply the default browser preference instead of explicitly setting it.
   firebase.auth().useDeviceLanguage();
 
-  //To sign in with a pop-up window, call signInWithPopup:
-  firebase.auth().signInWithPopup(provider).then(function(result) {
-    // This gives you a Google Access Token. You can use it to access the Google API.
-    var token = result.credential.accessToken;
-    // The signed-in user info.
-    var user = result.user;
+  $(document).on('click','#login', function(event) {
+    event.preventDefault();
 
-    console.log(user);
-    // ...
-  }).catch(function(error) {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // The email of the user's account used.
-    var email = error.email;
-    // The firebase.auth.AuthCredential type that was used.
-    var credential = error.credential;
-    // ...
+    var user = firebase.auth().currentUser;
+
+    if (user) {
+      firebase.auth().signOut().then(function() {
+        // Sign-out successful.
+      }).catch(function(error) {
+        // An error happened.
+      });
+    }
+    else {
+      //To sign in with a pop-up window, call signInWithPopup:
+      firebase.auth().signInWithPopup(provider).then(function(result) {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        var token = result.credential.accessToken;
+        // The signed-in user info.
+        var user = result.user;
+        // ...
+      }).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // The email of the user's account used.
+        var email = error.email;
+        // The firebase.auth.AuthCredential type that was used.
+        var credential = error.credential;
+        // ...
+      });
+    }
   });
 
-  //firebase.auth().signOut().then(function() {
-  //  // Sign-out successful.
-  //}).catch(function(error) {
-  //  // An error happened.
-  //});
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      $('#summernote').summernote('enable');
+      $('#login-logout').text('Logout');
+      $('#user-info').text('(User: ' + user.displayName + ')');
+      console.log(user.photoURL);
+    } else {
+      $('#summernote').summernote('disable');
+      $('#login-logout').text('Login');
+      $('#user-info').empty();
+    }
+  });
 
 });
 

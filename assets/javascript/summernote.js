@@ -5,16 +5,20 @@ var database = firebase.database();
 $(document).on('click','#add-journal-btn', function(event) {
   event.preventDefault();
 
-  var html = $('#summernote').summernote('code');
+  var user = firebase.auth().currentUser;
 
-  var date = moment($("#calendar").datepicker("getDate")).format('YYYYMMDD');
+  if (user) {
+    var html = $('#summernote').summernote('code');
 
-  database.ref("entries/" + date).push(html);
+    var date = moment($("#calendar").datepicker("getDate")).format('YYYYMMDD');
 
-  // reset and place focus on summernote
+    database.ref("entries/" + date).push(html);
 
-  $('#summernote').summernote('reset');
-  $('#summernote').summernote('focus');
+    // reset and place focus on summernote
+
+    $('#summernote').summernote('reset');
+    $('#summernote').summernote('focus');
+  }
 });
 
 function displayEntries(date) {
@@ -25,7 +29,7 @@ function displayEntries(date) {
 
   ref.orderByKey().on("child_added", function(snapshot) {
     var panel = $('<div class="panel panel-default">');
-    var panelBody = $('<div class="panel-body">').html(snapshot.val());
+    var panelBody = $('<div class="panel-body post">').html(snapshot.val());
     panel.append(panelBody);
     $('#posts').append(panel);
     console.log(snapshot.val());
