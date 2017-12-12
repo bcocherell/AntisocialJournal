@@ -13,8 +13,8 @@ $(document).on('click','#add-journal-btn', function(event) {
     var date = moment($("#calendar").datepicker("getDate")).format('YYYYMMDD');
 
     database.ref(user.uid + '/' + date).push(html);
-    displayEntries(date);
 
+    console.log(html);
     // reset and place focus on summernote
 
     $('#summernote').summernote('reset');
@@ -36,6 +36,7 @@ function displayEntries(date) {
       var panelBody = $('<div class="panel-body post">').html(snapshot.val());
       panel.append(panelBody);
       $('#posts').append(panel);
+      console.log(snapshot.val());
 
     });
   }
