@@ -64,10 +64,14 @@ function displayMovies(date) {
 			}
 		}
 
+		var a = $('<a>');
+		a.attr('href', 'https://www.themoviedb.org/');
+		a.attr('target', '_blank');
 		var img = $('<img class="img-responsive">');
 		img.attr('src', 'assets/images/tmdb.png');
 		img.attr('alt', 'TMDb attribution');
 		img.css('padding-top','10px');
-		$('#movies').append(img);
+		a.append(img);
+		$('#movies').append(a);
 	});
 }
