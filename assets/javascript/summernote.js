@@ -28,14 +28,12 @@ function displayEntries(date) {
 
   var user = firebase.auth().currentUser;
 
-  console.log(prevDate);
-
   // Checking if user logged in or not
 
   if (user) {
     $('#posts').empty();
 
-    // Detach call back for previous date selected
+    // Detach call back for previous date selected (issue with multiple listeners being created for same child)
 
     if (typeof prevDate != 'undefined') {
       var prevRef = firebase.database().ref(user.uid + '/' + moment(prevDate, 'MM/DD/YYYY').format('YYYYMMDD'));
