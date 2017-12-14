@@ -1,4 +1,5 @@
 var database = firebase.database();
+var prevDate;
 
 // Adding journal entry after clicking button
 
@@ -27,10 +28,19 @@ function displayEntries(date) {
 
   var user = firebase.auth().currentUser;
 
+  console.log(prevDate);
+
   // Checking if user logged in or not
 
   if (user) {
     $('#posts').empty();
+
+    // Detach call back for previous date selected
+
+    if (typeof prevDate != 'undefined') {
+      var prevRef = firebase.database().ref(user.uid + '/' + moment(prevDate, 'MM/DD/YYYY').format('YYYYMMDD'));
+      prevRef.off("child_added");
+    }
 
     // Query firebase for posts
 
@@ -43,5 +53,7 @@ function displayEntries(date) {
       $('#posts').prepend(panel);
 
     });
+
+    prevDate = date;
   }
 }
